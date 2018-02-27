@@ -1,0 +1,169 @@
+/* GLOBAL CHANGES AND OVERRIDES*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  margin: -20px 0 0 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header,
+.card-manager-wrapper {
+  background-color: #009150;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: #ff8c00;
+}
+
+.card-manager-wrapper {
+  height: 9%;
+  font-size: 2em;
+  margin: 11px 0;
+}
+
+.App-header {
+  height: 15%;
+  font-size: calc(50vw * .1);
+}
+
+.App-header h2 {
+ position: relative;
+ top: 8px; 
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.pageContainer {
+  height: 100vh;
+}
+
+.categorySelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.categorySelectorBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 27px;
+}
+
+.categorySelectorBlock:hover {
+  cursor: pointer;
+  animation: wobble .2s ease !important;
+}
+
+.categorySelectorModal {
+  /* width: 100%; */
+  text-align: center;
+}
+
+.categorySelectorModal h3 {
+  padding: 0 10px !important;
+}
+
+.modalBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Select-menu-outer {
+  width: 80%;
+  left: 50%;
+  transform: translatex(-50%);
+  position: relative; 
+}
+
+.modalBoxPaper {
+  flex: 1;
+  width: 32%;
+  padding: 5px 0;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.card-form-input::placeholder {
+  color: #AAAAAA;
+}
+
+#card-form-selector::options {
+
+}
+
+#card-form-wrapper button:hover {
+  opacity: .9;
+  cursor: pointer;
+}
+
+#footer-spacer {
+  height: 50px;
+}
+
+/* .categorySelectorBlock h4 {
+  text-align: center;
+  font-size: 20px;
+} */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@media (min-width: 800px){
+  .App-header {
+    font-size: 2.5em;
+  }
+}

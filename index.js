@@ -1,6 +1,10 @@
 const express = require("express");
-const { Pool, Client } = require('pg');
+const {Pool, Client} = require('pg');
 const fs = require('fs');
+const path = require("path");
+const logger = require("morgan");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 const config = require("./config");
 const configureQuery = require("./lib/pool");
 const server = express();
@@ -8,19 +12,19 @@ const server = express();
 let pool = new Pool(config.db);
 server.connection = pool;
 
+
+server.use(logger("dev"));
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({extended: false}));
+server.use(cookieParser());
+server.use("/", express.static(path.join(__dirname, "../www/build")));
+
+
 configureLibs(server);
 configureAPIEndpoints(server);
 configureSQL(server);
 configureQuery(server);
 
-// server.client.query(server.sql.categoriesGet)
-//     .then(results=>{
-//         console.log(results);
-//     });
-
-// server.db.query(server.sql.categoriesGet, (err, res) => {
-//     console.log(err, res);
-// });
 
 server.listen(8000, () => {
     console.log(`Running on port 8000`);
@@ -76,3 +80,8 @@ Array.prototype.mapObjToValues = function (obj) {
     // console.log("arr", arr);
     return this;
 };
+
+
+// server.use("/categories", categoryRoutes);
+// app.use("/cards", cardRoutes);
+// app.use("/collections", collectionRoutes);
