@@ -17,7 +17,7 @@ server.use(logger("dev"));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(cookieParser());
-server.use("/", express.static(path.join(__dirname, "../www/build")));
+server.use("/", express.static(path.join(__dirname, "www/build")));
 
 
 configureLibs(server);

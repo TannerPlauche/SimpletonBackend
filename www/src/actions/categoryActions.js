@@ -16,13 +16,14 @@ export const getCategories = () => {
 };
 
 export const setCategories = payload => {
-  return { type: SET_CATEGORIES_ACTION, payload: payload };
+    console.log(payload);
+    return { type: SET_CATEGORIES_ACTION, payload: payload.rows };
 };
 
 export const toggleCategorySelectorModal = (letter) => {
   return { type: TOGGLE_SELECTOR_MODAL, payload: letter };
-}
+};
 
 export const addRemoveSelectedCategoryPosition = (position) => {
   return { type: ADD_REMOVE_SELECTED_CATEGORY_POSITION, payload: position }
-}
+};
